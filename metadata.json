@@ -1,0 +1,6 @@
+{
+  "name": "ContentForge AI",
+  "description": "All-in-one AI content generation, planning, SEO analysis, and multi-channel marketing hub",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

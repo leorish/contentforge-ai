@@ -1,0 +1,289 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;650;700&family=JetBrains+Mono:wght@400;500;650&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  body {
+    background-color: black;
+    color: #f4f4f5;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    transition: background-color 0.3s, color 0.3s;
+  }
+}
+
+/* Light Mode Overrides for premium sleek dashboard aesthetics */
+html.light body {
+  background-color: #FAFBFC !important;
+  color: #111827 !important;
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif !important;
+}
+
+/* Main content viewport in light mode */
+html.light div[class*="from-zinc-950"] {
+  background: linear-gradient(to bottom, #FAFBFC, #F4F6F8) !important;
+}
+
+/* Float Glass Sidebar */
+html.light aside, 
+html.light #cf-sidebar {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(20px) !important;
+  border-right: 1px solid #E5E7EB !important;
+  box-shadow: 6px 0 30px rgba(0, 0, 0, 0.015) !important;
+}
+
+html.light #cf-sidebar h3 {
+  color: #8B7CFF !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12rem !important;
+}
+
+html.light #cf-sidebar span {
+  color: #111827 !important;
+}
+
+html.light #cf-sidebar h1, html.light #cf-sidebar button {
+  color: #111827 !important;
+}
+
+/* Non-active items inside sidebar */
+html.light #cf-sidebar button:not([class*="bg-gradient-to-r"]):not([id^="btn-theme-"]) {
+  color: #6B7280 !important;
+  background-color: transparent !important;
+  border-left: 2px solid transparent !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+html.light #cf-sidebar button:not([class*="bg-gradient-to-r"]):not([id^="btn-theme-"]):hover {
+  background-color: #F4F6F8 !important;
+  color: #111827 !important;
+  transform: translateX(3px) !important;
+}
+
+/* Active item inside sidebar with primary accent shadow and border */
+html.light #cf-sidebar button[class*="bg-gradient-to-r"]:not([id^="btn-theme-"]) {
+  background: rgba(108, 92, 231, 0.08) !important;
+  color: #6C5CE7 !important;
+  border-left: 3px solid #6C5CE7 !important;
+  font-weight: 600 !important;
+  box-shadow: none !important;
+}
+
+/* Header overrides */
+html.light #cf-header {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid #E5E7EB !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.01) !important;
+}
+
+html.light #cf-header h2 {
+  color: #111827 !important;
+  font-weight: 700 !important;
+}
+
+html.light #cf-header p {
+  color: #6B7280 !important;
+}
+
+html.light #cf-header span[class*="text-zinc-400"] {
+  color: #6B7280 !important;
+}
+
+html.light #cf-header span[class*="text-zinc-650"],
+html.light #cf-header span[class*="text-zinc-600"] {
+  color: #9CA3AF !important;
+}
+
+/* General containers & Cards mapping to white 24px cards with ultra-soft shadow */
+html.light div[class*="bg-zinc-950/45"],
+html.light div[class*="bg-zinc-950/20"],
+html.light div[class*="bg-zinc-950/60"],
+html.light div[class*="bg-zinc-950/80"],
+html.light div[class*="bg-zinc-950/10"],
+html.light div[class*="bg-zinc-900"],
+html.light div[class*="bg-zinc-950"],
+html.light [id*="-tab"] > div[class*="bg-zinc-9"],
+html.light [id*="-tab"] > div[class*="bg-zinc-950"] {
+  background-color: #FFFFFF !important;
+  border: 1px solid #E5E7EB !important;
+  border-radius: 24px !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.01) !important;
+}
+
+/* Secondary bg style panels */
+html.light div[class*="bg-gradient-to-br"][class*="from-zinc-950"] {
+  background: #F4F6F8 !important;
+  border: 1px solid #E5E7EB !important;
+  border-radius: 16px !important;
+}
+
+html.light div[class*="border-zinc-900"],
+html.light div[class*="border-zinc-800"],
+html.light div[class*="border-zinc-850"] {
+  border-color: #E5E7EB !important;
+}
+
+/* Typography styles */
+html.light h1, html.light h2, html.light h3, html.light h4, html.light h5, html.light h6 {
+  color: #111827 !important;
+}
+
+html.light p {
+  color: #4B5563 !important;
+}
+
+html.light span[class*="text-zinc-100"] { color: #111827 !important; }
+html.light span[class*="text-zinc-200"] { color: #1F2937 !important; }
+html.light span[class*="text-zinc-300"] { color: #374151 !important; }
+html.light span[class*="text-zinc-400"] { color: #6B7280 !important; }
+html.light span[class*="text-zinc-500"] { color: #9CA3AF !important; }
+
+/* Custom Accents color mapping */
+html.light span[class*="text-indigo-400"],
+html.light span[class*="text-indigo-300"] {
+  color: #6C5CE7 !important;
+}
+html.light span[class*="text-purple-400"],
+html.light span[class*="text-purple-300"] {
+  color: #8B7CFF !important;
+}
+html.light span[class*="text-emerald-400"],
+html.light span[class*="text-emerald-300"] {
+  color: #00C896 !important;
+}
+html.light span[class*="text-amber-400"] {
+  color: #FFB648 !important;
+}
+
+/* Form inputs & elements */
+html.light input[type="text"],
+html.light select,
+html.light textarea {
+  background-color: #FFFFFF !important;
+  border: 1px solid #E5E7EB !important;
+  color: #111827 !important;
+  border-radius: 12px !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #9CA3AF !important;
+}
+
+html.light input:focus,
+html.light select:focus,
+html.light textarea:focus {
+  border-color: #6C5CE7 !important;
+  box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.12) !important;
+  background-color: #FFFFFF !important;
+}
+
+html.light select option {
+  background-color: #FFFFFF !important;
+  color: #111827 !important;
+}
+
+/* Tab swappers */
+html.light button[class*="bg-zinc-900"] {
+  background-color: #F4F6F8 !important;
+  color: #111827 !important;
+}
+
+html.light button[class*="text-zinc-500"] {
+  color: #6B7280 !important;
+}
+
+/* Premium micro-interactions & hover lift effects */
+button, .interactive-btn {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+button:hover, .interactive-btn:hover {
+  transform: translateY(-1.5px);
+}
+
+button:active, .interactive-btn:active {
+  transform: translateY(0.5px) scale(0.97);
+}
+
+/* Apply delicate box shadows on hover with primary accent tint for light mode */
+html.light button:not([id^="btn-theme-"]):not([id^="btn-sidebar-inner-close"]),
+html.light .interactive-btn {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+html.light button:not([id^="btn-theme-"]):not([id^="btn-sidebar-inner-close"]):not([class*="bg-transparent"]):hover,
+html.light .interactive-btn:hover {
+  box-shadow: 0 10px 20px -5px rgba(108, 92, 231, 0.12), 0 2px 4px rgba(0, 0, 0, 0.01) !important;
+}
+
+/* Ambient Purple Glow elements */
+.ambient-glow {
+  position: relative;
+}
+.ambient-glow::after {
+  content: '';
+  position: absolute;
+  inset: -1.5px;
+  background: linear-gradient(135deg, #6C5CE7, #8B7CFF);
+  filter: blur(8px);
+  opacity: 0.12;
+  z-index: -1;
+  border-radius: inherit;
+  transition: opacity 0.3s ease;
+}
+.ambient-glow:hover::after {
+  opacity: 0.22;
+}
+
+/* Custom premium design classes and utility wrappers */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 30s linear infinite;
+}
+
+/* Webkit indicators */
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+
+html.light input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  filter: none !important;
+}
